@@ -35,5 +35,4 @@ def play():
         txt1.output_F()
 
         pg.display.flip()
-
 play()
