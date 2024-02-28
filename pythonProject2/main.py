@@ -1,6 +1,8 @@
 import pygame as pg
 import sys
 from Icon import First_lvl
+from Icon import Second_lvl
+from Icon import Third_lvl
 
 clock = pg.time.Clock()
 
@@ -11,12 +13,8 @@ def play():
     pg.display.set_caption("Doctors")
     pg_color = (160, 160, 160)
     run = True
-    lvl = First_lvl(screen)
-    # steve_timer = pg.USEREVENT + 1
-    # pg.time.set_timer(steve_timer, 1000000)
-    eve = 0
+    lvl = Third_lvl(screen)
     while run:
-
         screen.fill(pg_color)
         lvl.draw()
         lvl.game()
