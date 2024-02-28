@@ -52,7 +52,7 @@ class First_lvl():
         self.screen.blit(self.image_H1, (135, 450))
         self.screen.blit(self.image_H1, (210, 450))
     def output_F(self):
-        """рисование medical_3"""
+        """рисование Font"""
         self.text1 = self.font.render("Афлубин", True, "Red")
         self.text2 = self.font.render("Пластырь", True, "Red")
         self.text3 = self.font.render("Таблетка от диареи", True, "Red")
