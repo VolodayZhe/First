@@ -24,6 +24,7 @@ def play(num):
         lvl.game()
         lvl.steve()
         lvl.heart_1()
+        lvl.but()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -33,6 +34,8 @@ def play(num):
                 do = 1
                 lvl.game(pos, do)
                 lvl.game_play(pos)
+                lvl.but(pos)
+
 
 
         pygame.display.flip()

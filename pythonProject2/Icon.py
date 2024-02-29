@@ -99,9 +99,13 @@ class First_lvl():
             self.screen.blit(self.hp[2], (210, 450))
             self.screen.blit(self.hp[2], (135, 450))
             self.screen.blit(self.image_H1, (60, 450))
+        if self.heart == 0:
+            pass
 
     def steve(self):
         """рисование Steve"""
+        if len(self.ill) == 0:
+            pass
         if self.B == 0:
             for i in self.ill:
                 self.C = i
@@ -119,6 +123,7 @@ class First_lvl():
                 self.B = 0
             else:
                 self.heart -= 1
+
 
     def game(self, pos="", do=0):
         """Рисование обводок лекарств"""
@@ -149,6 +154,13 @@ class First_lvl():
             pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
             pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
             pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+    def but(self, pos=0):
+        pygame.draw.rect(self.screen, "blue", (50, 20, 60, 60), 5)
+        if pos != 0:
+            if (50 < pos[0] < 110) and (20 < pos[1] < 80):
+                print(True)
+
+
 
 
 class Second_lvl():
@@ -233,9 +245,13 @@ class Second_lvl():
         elif self.heart == 1 and self.t == "three":
             self.screen.blit(self.hp[2], (165, 450))
             self.screen.blit(self.image_H1, (105, 450))
+        if self.heart == 0:
+            pass
 
     def steve(self):
         """рисование Steve"""
+        if len(self.ill) == 0:
+            pass
         if self.B == 0:
             for i in self.ill:
                 self.C = i
@@ -283,6 +299,11 @@ class Second_lvl():
             pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
             pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
             pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+    def but(self, pos=0):
+        pygame.draw.rect(self.screen, "blue", (50, 20, 60, 60), 5)
+        if pos != 0:
+            if (50 < pos[0] < 110) and (20 < pos[1] < 80):
+                print(True)
 
 
 class Third_lvl():
@@ -355,9 +376,13 @@ class Third_lvl():
         """рисование Heart_1"""
         if self.heart == 1:
             self.screen.blit(self.image_H1, (135, 450))
+        if self.heart == 0:
+            pass
 
     def steve(self):
         """рисование Steve"""
+        if len(self.ill) == 0:
+            pass
         if self.B == 0:
             for i in self.ill:
                 self.C = i
@@ -405,6 +430,11 @@ class Third_lvl():
             pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
             pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
             pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+    def but(self, pos=0):
+        pygame.draw.rect(self.screen, "blue", (50, 20, 60, 60), 5)
+        if pos != 0:
+            if (50 < pos[0] < 110) and (20 < pos[1] < 80):
+                print(True)
 
 
 
