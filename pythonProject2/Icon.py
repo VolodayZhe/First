@@ -104,8 +104,8 @@ class First_lvl():
 
     def steve(self):
         """рисование Steve"""
-        if len(self.ill) == 0:
-            pass
+        if self.B == 0 and len(self.ill) == 0:
+            print(True)
         if self.B == 0:
             for i in self.ill:
                 self.C = i
@@ -116,6 +116,7 @@ class First_lvl():
             self.screen.blit(self.C[2], (80, 160))
             text_steve = self.font.render(self.C[1], True, "Red")
             self.screen.blit(text_steve, (380, 300))
+
 
     def game_play(self, pos):
         if 80 < pos[0] < 230 and 160 < pos[1] < 410:
