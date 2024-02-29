@@ -193,6 +193,12 @@ def rule():
         font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 50)
         text_surface = font.render("RULES ARE IN FILE 'RULES'", True, (255, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
+
+        #with open('rules.txt', 'r') as tekst:
+        #    font1 = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 50)
+        #    text_surface1 = font.render(tekst.read(), True, (255, 0, 0))
+        #    text_rect1 = text_surface.get_rect(center=(300, 50))
+
         screen.blit(text_surface, text_rect)
         clown = pygame.image.load('clown.jpg')
         screen.blit(clown, [299, 150])
@@ -650,7 +656,9 @@ clock = pygame.time.Clock()
 pg_color = (160, 160, 160)
 main_background = pygame.image.load('fon.jpg')
 width, height = 800, 600
-
+pygame.mixer.music.load('muzika.mp3')
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.05)
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Doctor")
 
