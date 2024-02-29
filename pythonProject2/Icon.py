@@ -1,4 +1,4 @@
-import pygame as pg
+import pygame
 import sys
 import random
 
@@ -9,9 +9,9 @@ class First_lvl():
         self.screen = screen
         self.ip = 0
         self.ill = [
-            [1, "Боль в горле", pg.image.load("ill/Steve1.png")],
-            [2, "Диарея", pg.image.load("ill/Steve2.png")],
-            [3, "Царапина", pg.image.load("ill/Steve3.png")]
+            [1, "Боль в горле", pygame.image.load("ill/Steve1.png")],
+            [2, "Диарея", pygame.image.load("ill/Steve2.png")],
+            [3, "Царапина", pygame.image.load("ill/Steve3.png")]
         ]
         random.shuffle(self.ill)
         self.B = 0
@@ -19,38 +19,38 @@ class First_lvl():
         self.hill = 0
         self.heart = 3
         """инициализация Steve"""
-        self.image_S = pg.image.load("images/Steve.png")
+        self.image_S = pygame.image.load("images/Steve.png")
         self.rect = self.image_S.get_rect()
         self.screen_rect = screen.get_rect()
         """инициализация medical_1"""
-        self.image_M1 = pg.image.load("images/jar.png")
+        self.image_M1 = pygame.image.load("images/jar.png")
         self.rect = self.image_M1.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_2"""
-        self.image_M2 = pg.image.load("images/patch.png")
+        self.image_M2 = pygame.image.load("images/patch.png")
         self.rect = self.image_M2.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_3"""
-        self.image_M3 = pg.image.load("images/tablet.png")
+        self.image_M3 = pygame.image.load("images/tablet.png")
         self.rect = self.image_M3.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация Heart_1"""
-        self.image_H1 = pg.image.load("images/Heart_1.png")
+        self.image_H1 = pygame.image.load("images/Heart_1.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H2 = pg.image.load("images/Heart_2.png")
+        self.image_H2 = pygame.image.load("images/Heart_2.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H3 = pg.image.load("images/Heart_3.png")
+        self.image_H3 = pygame.image.load("images/Heart_3.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
         self.hp = [self.image_H1, self.image_H2, self.image_H3]
         self.t = 0
         """инициализация Font"""
-        self.font = pg.font.Font(None, 36)
+        self.font = pygame.font.Font(None, 36)
 
     def draw(self):
         """рисование medical_1"""
@@ -129,26 +129,26 @@ class First_lvl():
             pos = [1000000000, 100000000]
         if (600 < pos[0] < 710) or self.ip != 0:
             if (100 < pos[1] < 210) or self.ip == 1:
-                pg.draw.rect(self.screen, "red", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 100, 110, 110), 5)
                 self.ip = 1
-                pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
             elif (260 < pos[1] < 370) or self.ip == 3:
-                pg.draw.rect(self.screen, "red", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 260, 110, 110), 5)
                 self.ip = 3
-                pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
             elif (420 < pos[1] < 530) or self.ip == 2:
-                pg.draw.rect(self.screen, "red", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 420, 110, 110), 5)
                 self.ip = 2
-                pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
         else:
-            pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-            pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
-            pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
 
 class Second_lvl():
@@ -157,9 +157,9 @@ class Second_lvl():
         self.screen = screen
         self.ip = 0
         self.ill = [
-            [1, "Головная боль", pg.image.load("ill/Steve4.png")],
-            [2, "Вирус", pg.image.load("ill/Steve5.png")],
-            [3, "Кровотечение", pg.image.load("ill/Steve6.png")]
+            [1, "Головная боль", pygame.image.load("ill/Steve4.png")],
+            [2, "Вирус", pygame.image.load("ill/Steve5.png")],
+            [3, "Кровотечение", pygame.image.load("ill/Steve6.png")]
         ]
         random.shuffle(self.ill)
         self.B = 0
@@ -167,38 +167,38 @@ class Second_lvl():
         self.hill = 0
         self.heart = 2
         """инициализация Steve"""
-        self.image_S = pg.image.load("images/Steve.png")
+        self.image_S = pygame.image.load("images/Steve.png")
         self.rect = self.image_S.get_rect()
         self.screen_rect = screen.get_rect()
         """инициализация medical_1"""
-        self.image_M1 = pg.image.load("images/pill.png")
+        self.image_M1 = pygame.image.load("images/pill.png")
         self.rect = self.image_M1.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_2"""
-        self.image_M2 = pg.image.load("images/syringe.png")
+        self.image_M2 = pygame.image.load("images/syringe.png")
         self.rect = self.image_M2.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_3"""
-        self.image_M3 = pg.image.load("images/kit.png")
+        self.image_M3 = pygame.image.load("images/kit.png")
         self.rect = self.image_M3.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация Heart_1"""
-        self.image_H1 = pg.image.load("images/Heart_1.png")
+        self.image_H1 = pygame.image.load("images/Heart_1.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H2 = pg.image.load("images/Heart_2.png")
+        self.image_H2 = pygame.image.load("images/Heart_2.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H3 = pg.image.load("images/Heart_3.png")
+        self.image_H3 = pygame.image.load("images/Heart_3.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
         self.hp = [self.image_H1, self.image_H2, self.image_H3]
         self.t = 0
         """инициализация Font"""
-        self.font = pg.font.Font(None, 36)
+        self.font = pygame.font.Font(None, 36)
 
     def draw(self):
         """рисование medical_1"""
@@ -263,26 +263,26 @@ class Second_lvl():
             pos = [1000000000, 100000000]
         if (600 < pos[0] < 710) or self.ip != 0:
             if (100 < pos[1] < 210) or self.ip == 1:
-                pg.draw.rect(self.screen, "red", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 100, 110, 110), 5)
                 self.ip = 1
-                pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
             elif (260 < pos[1] < 370) or self.ip == 2:
-                pg.draw.rect(self.screen, "red", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 260, 110, 110), 5)
                 self.ip = 2
-                pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
             elif (420 < pos[1] < 530) or self.ip == 3:
-                pg.draw.rect(self.screen, "red", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 420, 110, 110), 5)
                 self.ip = 3
-                pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
         else:
-            pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-            pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
-            pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
 
 class Third_lvl():
@@ -291,9 +291,9 @@ class Third_lvl():
         self.screen = screen
         self.ip = 0
         self.ill = [
-            [1, "Боль в горле", pg.image.load("ill/Steve1.png")],
-            [2, "Царапина", pg.image.load("ill/Steve3.png")],
-            [3, "КРЫСА!!!", pg.image.load("ill/RAAT.png")]
+            [1, "Боль в горле", pygame.image.load("ill/Steve1.png")],
+            [2, "Царапина", pygame.image.load("ill/Steve3.png")],
+            [3, "КРЫСА!!!", pygame.image.load("ill/RAAT.png")]
         ]
         random.shuffle(self.ill)
         self.B = 0
@@ -301,38 +301,38 @@ class Third_lvl():
         self.hill = 0
         self.heart = 1
         """инициализация Steve"""
-        self.image_S = pg.image.load("images/Steve.png")
+        self.image_S = pygame.image.load("images/Steve.png")
         self.rect = self.image_S.get_rect()
         self.screen_rect = screen.get_rect()
         """инициализация medical_1"""
-        self.image_M1 = pg.image.load("images/jar.png")
+        self.image_M1 = pygame.image.load("images/jar.png")
         self.rect = self.image_M1.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_2"""
-        self.image_M2 = pg.image.load("images/kit.png")
+        self.image_M2 = pygame.image.load("images/kit.png")
         self.rect = self.image_M2.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_3"""
-        self.image_M3 = pg.image.load("images/rat.png")
+        self.image_M3 = pygame.image.load("images/rat.png")
         self.rect = self.image_M3.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация Heart_1"""
-        self.image_H1 = pg.image.load("images/Heart_1.png")
+        self.image_H1 = pygame.image.load("images/Heart_1.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H2 = pg.image.load("images/Heart_2.png")
+        self.image_H2 = pygame.image.load("images/Heart_2.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H3 = pg.image.load("images/Heart_3.png")
+        self.image_H3 = pygame.image.load("images/Heart_3.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
         self.hp = [self.image_H1, self.image_H2, self.image_H3]
         self.t = 0
         """инициализация Font"""
-        self.font = pg.font.Font(None, 36)
+        self.font = pygame.font.Font(None, 36)
 
     def draw(self):
         """рисование medical_1"""
@@ -385,26 +385,26 @@ class Third_lvl():
             pos = [1000000000, 100000000]
         if (600 < pos[0] < 710) or self.ip != 0:
             if (100 < pos[1] < 210) or self.ip == 1:
-                pg.draw.rect(self.screen, "red", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 100, 110, 110), 5)
                 self.ip = 1
-                pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
             elif (260 < pos[1] < 370) or self.ip == 2:
-                pg.draw.rect(self.screen, "red", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 260, 110, 110), 5)
                 self.ip = 2
-                pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
             elif (420 < pos[1] < 530) or self.ip == 3:
-                pg.draw.rect(self.screen, "red", (600, 420, 110, 110), 5)
+                pygame.draw.rect(self.screen, "red", (600, 420, 110, 110), 5)
                 self.ip = 3
-                pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-                pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+                pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
         else:
-            pg.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
-            pg.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
-            pg.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 100, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 260, 110, 110), 5)
+            pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
 
 

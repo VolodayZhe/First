@@ -1,36 +1,40 @@
-import pygame as pg
+import pygame
 import sys
 from Icon import First_lvl
 from Icon import Second_lvl
 from Icon import Third_lvl
 
-clock = pg.time.Clock()
-
-
-def play():
-    pg.init()
-    screen = pg.display.set_mode((800, 600))
-    pg.display.set_caption("Doctors")
-    pg_color = (160, 160, 160)
+clock = pygame.time.Clock()
+pg_color = (160, 160, 160)
+screen = pygame.display.set_mode((800, 600))
+pygame.init()
+pygame.display.set_caption("Doctors")
+num = 1
+def play(num):
     run = True
-    lvl = Third_lvl(screen)
+    if num == 1:
+        lvl = First_lvl(screen)
+    elif num == 2:
+        lvl = First_lvl(screen)
+    elif num == 3:
+        lvl = First_lvl(screen)
     while run:
         screen.fill(pg_color)
         lvl.draw()
         lvl.game()
         lvl.steve()
         lvl.heart_1()
-        for event in pg.event.get():
-            if event.type == pg.QUIT:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
                 run = False
-            elif event.type == pg.MOUSEBUTTONDOWN:
-                xm, ym = pg.mouse.get_pos()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                xm, ym = pygame.mouse.get_pos()
                 pos = [xm, ym]
                 do = 1
                 lvl.game(pos, do)
                 lvl.game_play(pos)
 
 
-        pg.display.flip()
+        pygame.display.flip()
         clock.tick(15)
-play()
+play(num)
