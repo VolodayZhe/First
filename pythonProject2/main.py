@@ -160,7 +160,7 @@ def ggs():
         pygame.display.flip()
 
 
-def win():
+def win(heart=None):
     back_button = Button(299, 500, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
     running = True
     while running:
@@ -169,6 +169,9 @@ def win():
         font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 72)
         text_surface = font.render("YOU WIN!", True, (255, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
+        screen.blit(text_surface, text_rect)
+        text_surface = font.render(f"Hearts left: {heart}", True, (255, 0, 0))
+        text_rect = text_surface.get_rect(center=(400, 200))
         screen.blit(text_surface, text_rect)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -327,7 +330,7 @@ class First_lvl():
     def steve(self):
         """рисование Steve"""
         if len(self.ill) == 0 and self.B == 0:
-            win()
+            win(self.heart)
         if self.B == 0:
             for i in self.ill:
                 self.C = i
@@ -473,6 +476,8 @@ class Second_lvl():
     def steve(self):
         """рисование Steve"""
         if len(self.ill) == 0 and self.B == 0:
+            win(self.heart)
+        if len(self.ill) == 0 and self.B == 0:
             win()
         if self.B == 0:
             for i in self.ill:
@@ -606,6 +611,8 @@ class Third_lvl():
 
     def steve(self):
         """рисование Steve"""
+        if len(self.ill) == 0 and self.B == 0:
+            win(self.heart)
         if len(self.ill) == 0 and self.B == 0:
             win()
         if self.B == 0:
