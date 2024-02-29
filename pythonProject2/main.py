@@ -1,7 +1,4 @@
 import sys
-from Icon import First_lvl
-from Icon import Second_lvl
-from Icon import Third_lvl
 import pygame
 import random
 def play(num):
@@ -189,25 +186,17 @@ def win():
 def rule():
     back_button = Button(299, 500, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
     running = True
-    txt = [] #
-    H = 1 #
+    txt = []
+    H = 1
     ttt = 0
     while running:
         screen.fill('White')
         screen.blit(main_background, (-85, 0))
         font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 50)
-        text_surface = font.render("RULES ARE IN FILE 'RULES'", True, (255, 0, 0))
+        text_surface = font.render("RULES", True, (255, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
 
         with open('rules.txt', 'r', encoding='utf-8') as tekst:
-            # font1 = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 50)
-            # text_surface1 = font.render(tekst.read(), True, (255, 0, 0))
-            # text_rect1 = text_surface.get_rect(center=(300, 50))
-            # text_rect1.blit(text_surface1, (550, 400))
-            #
-            # text_surface1 = font1.render(tekst.read(), True, (255, 0, 0))
-            # screen.blit(text_surface1, (300, 0))
-
             data = tekst.read()
             for line in data.splitlines():
                 if line not in txt:
