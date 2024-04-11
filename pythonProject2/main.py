@@ -1,6 +1,9 @@
 import sys
 import pygame
 import random
+
+image_path = "/data/data/com.voloday.mygame/files/app/"
+
 def play(num):
     run = True
     if num == 1:
@@ -50,7 +53,7 @@ class Button:
     def draw(self, screen, size):
         current_image = self.hover_image if self.is_hovered else self.image
         screen.blit(current_image, self.rect.topleft)
-        font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', size)
+        font = pygame.font.Font(image_path + 'Far Cry Cyr Regular_0.ttf', size)
         text_surface = font.render(self.text, True, (128, 0, 0))
         text_rect = text_surface.get_rect(center=self.rect.center)
         screen.blit(text_surface, text_rect)
@@ -65,14 +68,14 @@ class Button:
 
 def main_menu():
     running = True
-    rules_button = Button(299, 320, 203, 111, 'playbutton.png', 'RULES',
-                          'playbutton_pressed.png')
-    play_button = Button(299, 200, 203, 111, 'playbutton.png', 'NEW GAME',
-                         'playbutton_pressed.png')
+    rules_button = Button(299, 320, 203, 111, image_path + 'playbutton.png', 'RULES',
+                          image_path + 'playbutton_pressed.png')
+    play_button = Button(299, 200, 203, 111, image_path + 'playbutton.png', 'NEW GAME',
+                         image_path + 'playbutton_pressed.png')
     while running:
         screen.fill((255, 255, 255))
         screen.blit(main_background, (-85, 0))
-        font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 72)
+        font = pygame.font.Font(image_path + 'Far Cry Cyr Regular_0.ttf', 72)
         text_surface = font.render("DOCTOR", True, (0, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
         screen.blit(text_surface, text_rect)
@@ -95,15 +98,15 @@ def main_menu():
 
 
 def level_select():
-    back_button = Button(299, 500, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
-    first_level = Button(299, 200, 144, 82, 'shortbutton.png', '1 level', 'shortbutton_pressed.png')
-    second_level = Button(299, 300, 144, 82, 'shortbutton.png', '2 level', 'shortbutton_pressed.png')
-    third_level = Button(299, 400, 144, 82, 'shortbutton.png', '3 level', 'shortbutton_pressed.png')
+    back_button = Button(299, 500, 200, 82, image_path + 'playbutton.png', 'BACK', image_path + 'playbutton_pressed.png')
+    first_level = Button(299, 200, 144, 82, image_path + 'shortbutton.png', '1 level', image_path + 'shortbutton_pressed.png')
+    second_level = Button(299, 300, 144, 82, image_path + 'shortbutton.png', '2 level', image_path + 'shortbutton_pressed.png')
+    third_level = Button(299, 400, 144, 82, image_path + 'shortbutton.png', '3 level', image_path + 'shortbutton_pressed.png')
     running = True
     while running:
         screen.fill('White')
         screen.blit(main_background, (-85, 0))
-        font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 72)
+        font = pygame.font.Font(image_path + 'Far Cry Cyr Regular_0.ttf', 72)
         text_surface = font.render("SELECT LEVEL", True, (0, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
         screen.blit(text_surface, text_rect)
@@ -137,12 +140,12 @@ def level_select():
 
 
 def ggs():
-    back_button = Button(299, 500, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
+    back_button = Button(299, 500, 200, 82, image_path + 'playbutton.png', 'BACK', image_path + 'playbutton_pressed.png')
     running = True
     while running:
         screen.fill('White')
         screen.blit(main_background, (-85, 0))
-        font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 72)
+        font = pygame.font.Font(image_path + 'Far Cry Cyr Regular_0.ttf', 72)
         text_surface = font.render("GAME OVER", True, (255, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
         screen.blit(text_surface, text_rect)
@@ -161,12 +164,12 @@ def ggs():
 
 
 def win(heart=None):
-    back_button = Button(299, 500, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
+    back_button = Button(299, 500, 200, 82, image_path + 'playbutton.png', 'BACK', image_path + 'playbutton_pressed.png')
     running = True
     while running:
         screen.fill('White')
         screen.blit(main_background, (-85, 0))
-        font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 72)
+        font = pygame.font.Font(image_path + 'Far Cry Cyr Regular_0.ttf', 72)
         text_surface = font.render("YOU WIN!", True, (255, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
         screen.blit(text_surface, text_rect)
@@ -187,7 +190,7 @@ def win(heart=None):
 
 
 def rule():
-    back_button = Button(299, 500, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
+    back_button = Button(299, 500, 200, 82, image_path + 'playbutton.png', 'BACK', image_path + 'playbutton_pressed.png')
     running = True
     txt = []
     H = 1
@@ -195,7 +198,7 @@ def rule():
     while running:
         screen.fill('White')
         screen.blit(main_background, (-85, 0))
-        font = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 50)
+        font = pygame.font.Font(image_path + 'Far Cry Cyr Regular_0.ttf', 50)
         text_surface = font.render("Rules in file 'RULES'", True, (255, 0, 0))
         text_rect = text_surface.get_rect(center=(400, 50))
 
@@ -207,14 +210,14 @@ def rule():
                     H = 0
             if H == 0:
                 for jey in txt:
-                    font1 = pygame.font.Font('Far Cry Cyr Regular_0.ttf', 15)
+                    font1 = pygame.font.Font(image_path + 'Far Cry Cyr Regular_0.ttf', 15)
                     text_surface1 = font1.render(jey, True, (255, 0, 0))
                     screen.blit(text_surface1, (25, 251 + ttt))
                     ttt += 20
                 ttt = 0
 
         screen.blit(text_surface, text_rect)
-        clown = pygame.image.load('clown.jpg')
+        clown = pygame.image.load(image_path + 'clown.jpg')
         screen.blit(clown, [299, 150])
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -234,9 +237,9 @@ class First_lvl():
         self.screen = screen
         self.ip = 0
         self.ill = [
-            [1, "Боль в горле", pygame.image.load("ill/Steve1.png")],
-            [2, "Диарея", pygame.image.load("ill/Steve2.png")],
-            [3, "Царапина", pygame.image.load("ill/Steve3.png")]
+            [1, "Боль в горле", pygame.image.load(image_path + "ill/Steve1.png")],
+            [2, "Диарея", pygame.image.load(image_path + "ill/Steve2.png")],
+            [3, "Царапина", pygame.image.load(image_path + "ill/Steve3.png")]
         ]
         random.shuffle(self.ill)
         self.B = 0
@@ -244,32 +247,32 @@ class First_lvl():
         self.hill = 0
         self.heart = 3
         """инициализация Steve"""
-        self.image_S = pygame.image.load("images/Steve.png")
+        self.image_S = pygame.image.load(image_path + "images/Steve.png")
         self.rect = self.image_S.get_rect()
         self.screen_rect = screen.get_rect()
         """инициализация medical_1"""
-        self.image_M1 = pygame.image.load("images/jar.png")
+        self.image_M1 = pygame.image.load(image_path + "images/jar.png")
         self.rect = self.image_M1.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_2"""
-        self.image_M2 = pygame.image.load("images/patch.png")
+        self.image_M2 = pygame.image.load(image_path + "images/patch.png")
         self.rect = self.image_M2.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_3"""
-        self.image_M3 = pygame.image.load("images/tablet.png")
+        self.image_M3 = pygame.image.load(image_path + "images/tablet.png")
         self.rect = self.image_M3.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация Heart_1"""
-        self.image_H1 = pygame.image.load("images/Heart_1.png")
+        self.image_H1 = pygame.image.load(image_path + "images/Heart_1.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H2 = pygame.image.load("images/Heart_2.png")
+        self.image_H2 = pygame.image.load(image_path + "images/Heart_2.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H3 = pygame.image.load("images/Heart_3.png")
+        self.image_H3 = pygame.image.load(image_path + "images/Heart_3.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
         self.hp = [self.image_H1, self.image_H2, self.image_H3]
@@ -380,7 +383,7 @@ class First_lvl():
             pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
     def but(self, pos=0):
-        back_button = Button(50, 20, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
+        back_button = Button(50, 20, 200, 82, image_path + 'playbutton.png', 'BACK', image_path + 'playbutton_pressed.png')
         back_button.check_hover(pygame.mouse.get_pos())
         back_button.draw(screen, 30)
         if pos != 0:
@@ -394,9 +397,9 @@ class Second_lvl():
         self.screen = screen
         self.ip = 0
         self.ill = [
-            [1, "Головная боль", pygame.image.load("ill/Steve4.png")],
-            [2, "Вирус", pygame.image.load("ill/Steve5.png")],
-            [3, "Кровотечение", pygame.image.load("ill/Steve6.png")]
+            [1, "Головная боль", pygame.image.load(image_path + "ill/Steve4.png")],
+            [2, "Вирус", pygame.image.load(image_path + "ill/Steve5.png")],
+            [3, "Кровотечение", pygame.image.load(image_path + "ill/Steve6.png")]
         ]
         random.shuffle(self.ill)
         self.B = 0
@@ -404,32 +407,32 @@ class Second_lvl():
         self.hill = 0
         self.heart = 2
         """инициализация Steve"""
-        self.image_S = pygame.image.load("images/Steve.png")
+        self.image_S = pygame.image.load(image_path + "images/Steve.png")
         self.rect = self.image_S.get_rect()
         self.screen_rect = screen.get_rect()
         """инициализация medical_1"""
-        self.image_M1 = pygame.image.load("images/pill.png")
+        self.image_M1 = pygame.image.load(image_path + "images/pill.png")
         self.rect = self.image_M1.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_2"""
-        self.image_M2 = pygame.image.load("images/syringe.png")
+        self.image_M2 = pygame.image.load(image_path + "images/syringe.png")
         self.rect = self.image_M2.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_3"""
-        self.image_M3 = pygame.image.load("images/kit.png")
+        self.image_M3 = pygame.image.load(image_path + "images/kit.png")
         self.rect = self.image_M3.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация Heart_1"""
-        self.image_H1 = pygame.image.load("images/Heart_1.png")
+        self.image_H1 = pygame.image.load(image_path + "images/Heart_1.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H2 = pygame.image.load("images/Heart_2.png")
+        self.image_H2 = pygame.image.load(image_path + "images/Heart_2.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H3 = pygame.image.load("images/Heart_3.png")
+        self.image_H3 = pygame.image.load(image_path + "images/Heart_3.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
         self.hp = [self.image_H1, self.image_H2, self.image_H3]
@@ -528,7 +531,7 @@ class Second_lvl():
             pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
     def but(self, pos=0):
-        back_button = Button(50, 20, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
+        back_button = Button(50, 20, 200, 82, image_path + 'playbutton.png', 'BACK', image_path + 'playbutton_pressed.png')
         back_button.check_hover(pygame.mouse.get_pos())
         back_button.draw(screen, 30)
         if pos != 0:
@@ -542,9 +545,9 @@ class Third_lvl():
         self.screen = screen
         self.ip = 0
         self.ill = [
-            [1, "Боль в горле", pygame.image.load("ill/Steve1.png")],
-            [2, "Царапина", pygame.image.load("ill/Steve3.png")],
-            [3, "КРЫСА!!!", pygame.image.load("ill/RAAT.png")]
+            [1, "Боль в горле", pygame.image.load(image_path + "ill/Steve1.png")],
+            [2, "Царапина", pygame.image.load(image_path + "ill/Steve3.png")],
+            [3, "КРЫСА!!!", pygame.image.load(image_path + "ill/RAAT.png")]
         ]
         random.shuffle(self.ill)
         self.B = 0
@@ -552,32 +555,32 @@ class Third_lvl():
         self.hill = 0
         self.heart = 1
         """инициализация Steve"""
-        self.image_S = pygame.image.load("images/Steve.png")
+        self.image_S = pygame.image.load(image_path + "images/Steve.png")
         self.rect = self.image_S.get_rect()
         self.screen_rect = screen.get_rect()
         """инициализация medical_1"""
-        self.image_M1 = pygame.image.load("images/jar.png")
+        self.image_M1 = pygame.image.load(image_path + "images/jar.png")
         self.rect = self.image_M1.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_2"""
-        self.image_M2 = pygame.image.load("images/kit.png")
+        self.image_M2 = pygame.image.load(image_path + "images/kit.png")
         self.rect = self.image_M2.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация medical_3"""
-        self.image_M3 = pygame.image.load("images/rat.png")
+        self.image_M3 = pygame.image.load(image_path + "images/rat.png")
         self.rect = self.image_M3.get_rect()
         self.screen_rect = screen.get_rect()
 
         """инициализация Heart_1"""
-        self.image_H1 = pygame.image.load("images/Heart_1.png")
+        self.image_H1 = pygame.image.load(image_path + "images/Heart_1.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H2 = pygame.image.load("images/Heart_2.png")
+        self.image_H2 = pygame.image.load(image_path + "images/Heart_2.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
-        self.image_H3 = pygame.image.load("images/Heart_3.png")
+        self.image_H3 = pygame.image.load(image_path + "images/Heart_3.png")
         self.rect = self.image_H1.get_rect()
         self.screen_rect = screen.get_rect()
         self.hp = [self.image_H1, self.image_H2, self.image_H3]
@@ -664,7 +667,7 @@ class Third_lvl():
             pygame.draw.rect(self.screen, "black", (600, 420, 110, 110), 5)
 
     def but(self, pos=0):
-        back_button = Button(50, 20, 200, 82, 'playbutton.png', 'BACK', 'playbutton_pressed.png')
+        back_button = Button(50, 20, 200, 82, image_path + 'playbutton.png', 'BACK', image_path + 'playbutton_pressed.png')
         back_button.check_hover(pygame.mouse.get_pos())
         back_button.draw(screen, 30)
         if pos != 0:
@@ -678,9 +681,9 @@ pygame.init()
 size = (850, 500)
 clock = pygame.time.Clock()
 pg_color = (160, 160, 160)
-main_background = pygame.image.load('fon.jpg')
+main_background = pygame.image.load(image_path + 'fon.jpg')
 width, height = 800, 600
-pygame.mixer.music.load('ЧипиЧипи.mp3')
+pygame.mixer.music.load(image_path + 'ЧипиЧипи.mp3')
 pygame.mixer.music.play(-1)
 pygame.mixer.music.set_volume(0.05)
 screen = pygame.display.set_mode((width, height))
